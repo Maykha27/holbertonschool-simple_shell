@@ -14,6 +14,5 @@ int main(void)
 	printf("$ ");
 	getline (&buffstring,&len,stdin);
 	printf("%s", buffstring);
-	return (0);
 	}
 }
