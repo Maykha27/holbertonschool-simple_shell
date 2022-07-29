@@ -19,6 +19,7 @@ int main(void)
 	int forkchild;
 	int status;
 
+	buffstring = malloc (sizeof(char)*1024);
 
 	while (1)
 	{
