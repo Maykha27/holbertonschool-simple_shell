@@ -10,7 +10,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 /**
- * read_line - reads the input string.
+ * read_line - reads the inputs string.
  *
  * @i_eof: return value of getline function
  * Return: input string
