@@ -11,19 +11,13 @@
 #define SHELL_TOK_BUFSIZE 64
 #define  SHELL_TOK_DELIM "\t\r\n\a"
 
-//shell division
-//read      -read input
-//parse     -separate program and args
-//execute   -run parsed command
-
-//function declaration
 int shell_cd(char **args);
 
 int shell_help(void);
 
 int shell_exit(void);
 
-//list of commands
+
 char *builtin_str[] = {
         "cd",
         "help",
@@ -44,7 +38,7 @@ int shell_launch(char **args) {
 
     pid = fork();
     if (pid == 0) {
-        //child process
+
         if (execvp(args[0], args) == -1) {
             perror("shell");
         }
@@ -147,10 +141,10 @@ char *shell_read_line(void) {
     }
 
     while (1) {
-        //read
+
         c = getchar();
 
-        //end of file equals null and return
+
         if (c == EOF || c == '\n') {
             buffer[position] = '\0';
             return buffer;
@@ -170,14 +164,6 @@ char *shell_read_line(void) {
     }
 }
 
-/*
-char *shell_read_line(void) {
-    char *line = NULL;
-    ssize_t bufsize = 0; //allocate buffer
-    getline(&line, &bufsize, stdin);
-    return line;
-}
- */
 
 void shell_loop(void) {
     char *line;
@@ -185,7 +171,7 @@ void shell_loop(void) {
     int status;
 
     do {
-        printf("--> ");
+        printf("$ ");
         line = shell_read_line();
         args = shell_split_line(line);
         status = shell_execute(args);
