@@ -24,6 +24,7 @@ int main(int argc, char *argv[], char *envp[])
     {
         printf("%s\n", argv[i]);
     }
+
     while (1)
     {
       printf("$ ");
