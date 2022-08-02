@@ -3,7 +3,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
+#include <limits.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 int main()
 {
@@ -15,6 +21,7 @@ int main()
     int child = 0;
 
     char **args = malloc(sizeof(char *) * 4);
+
 
     while ((nread = getline(&line, &len, stdin)) != -1)
     {
@@ -35,10 +42,12 @@ int main()
         {
             perror("Error:");
         }
+		wait(NULL);
 
     }
 
     free(line);
+    free(args);
 
     exit(EXIT_SUCCESS);
 }
