@@ -17,16 +17,16 @@ int main()
     size_t len = 0;
     ssize_t nread;
     char *token;
-    int i = 0;
+    int i;
     int child = 0;
 
-    char **args = malloc(sizeof(char *) * 4);
+    char **args = malloc(sizeof(char *) * 1024);
 
 
     while ((nread = getline(&line, &len, stdin)) != -1)
     {
 
-
+        i = 0;
         token = strtok(line, " \n");
         child = fork();
 
