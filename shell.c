@@ -51,4 +51,26 @@ int main()
     free(args);
 
     exit(EXIT_SUCCESS);
+    void  openHelp () {
+    puts ( " \n ***READ THE INSTRUCTIONS BELLOW*** "
+        " \n List of Commands supported: "
+        " \n >cd "
+        " \n >mkdir "
+        " \n >rmdir "
+        " \n >echo "
+        " \n >pwd "
+        " \n >help "
+        " \n >date "
+        " \n >exit "
+        " \n >ls "
+        " \n >python "
+        " \n >clear "
+        " \n " );
+
+    char * username =  getenv ( " USER " );
+    printf ( " User is: @ %s " , username);
+    printf ( " \n " " \n " );
+
+    return ;
+    }
 }
