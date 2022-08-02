@@ -10,7 +10,6 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <spawn.h>
 #include <stdlib.h>
 
 int main(int argc, char *argv[], char *envp[])
