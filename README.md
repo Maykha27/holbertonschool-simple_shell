@@ -1,5 +1,17 @@
 # holbertonschool-simple_shellSimple shell
 The simple shell consists of designing a C program to serve as an interface to the environment that accepts commands from the user and then executes each command in a separate process. Your application will allow for input and redirection of output, as well as piping as a form of CPI between a pair of commands. The completion of this project will consist of using UNIX (fork(), exec(), wait(), ...system calls and can be completed on a Linux system.
+Requirements
+
+    * Allowed editors: vi, vim, or emacs
+    * All files were compiled on Ubuntu 14.04 LTS
+    * Programs and functions were compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
+    * All files should end with a new line
+    * Code should use the Betty style. It is checked using betty-style.pl and betty-doc.pl
+    * No more than 5 functions per file
+    * All header files should be include guarded
+    * System calls are only used when needed
+
+
 Pre-requisites
 ### Authorized functions and macros:
     * • access (man 2 access)
@@ -38,12 +50,27 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 This wil compile all the '.c' files and change the output's name to 'hsh'.
 ```
 ### Template to test output:
+The shell works like this in interactive mode
 ```
 ============= $ ./hsh
 ($)
 hsh main.c shell.c
 $ exit $
 ```
+```
+$ ls -l
+-rwxrwxr-x 1 vagrant vagrant 14136 Nov 24 21:42 hsh
+-rw-rw-r-- 1 vagrant vagrant   863 Nov 24 21:42 shell.c
+-rw-rw-r-- 1 vagrant vagrant   784 Nov 24 01:02 path.c
+-rw-rw-r-- 1 vagrant vagrant  1449 Nov 22 23:48 README.md
+```
+```
+$ pwd
+/home/vagrant/simple_shell
+
+```
+$ exit
+$
 After you clone this repository and compile the program with the command above, you will generate a file called hsh that can be executed by entering ./hsh in your shell.
 The output after the program is executed should look something like this:
 ```
@@ -53,8 +80,10 @@ Where you will get a prompt in the shape of a dollar sign so you can start typin
 ### Function Prototypes:
 Brief description of functions contained in project:
 #### buffstring:
-#### getline: is a standard library function that is used to read a string or a line from an input stream. It is a part of the <string> header
-#### stdin:  he use if your scripts are being piped or redirected.
+#### getline:
+is a standard library function that is used to read a string or a line from an input stream. It is a part of the <string> header
+#### stdin:
+ he use if your scripts are being piped or redirected.
 forkchild
 exercve
 wait
