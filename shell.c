@@ -1,54 +1,48 @@
-#define _GNU_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <limits.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#include "shell.h"
 
 
 int main()
+
 {
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t nread;
-    char *token;
-    int i;
-    int child = 0;
-
-    char **args = malloc(sizeof(char *) * 1024);
+	char *line = NULL;
+	size_t len = 0;
+	ssize_t nread;
+	char *token;
+	int i;
+	char **args;
 
 
-    while ((nread = getline(&line, &len, stdin)) != -1)
-    {
+	while ((nread = getline(&line, &len, stdin)) != -1)
+	{
+		i = 0;
+		token = strtok(line, " \n");
 
-        i = 0;
-        token = strtok(line, " \n");
-        child = fork();
+		if (token == NULL)
+			continue;
 
-         while (token != NULL)
-        {
-            args[i] = token;
-            token = strtok(NULL, " \n");
-            i++;
-        }
+		args = malloc(sizeof(char *) * 1024);
 
-        if (child == 0)
-        if (execve(args[0], args, NULL) == -1)
-        {
-            perror("Error:");
-        }
+		while (token != NULL)
+		{
+			args[i] = token;
+			token = strtok(NULL, " \n");
+			i++;
+		}
+
+		if (fork() == 0)
+		{
+			if (execve(args[0], args, NULL) == -1)
+			{
+				perror("Error:");
+			}
+		}
+
+
 		wait(NULL);
+		free(args);
 
-    }
+	}
 
-    free(line);
-    free(args);
-
-    exit(EXIT_SUCCESS);
+	free(line);
+	exit(EXIT_SUCCESS);
 }
