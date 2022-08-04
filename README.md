@@ -88,7 +88,7 @@ blocks the calling process until one of its child processes exits or a signal is
 #### strtok() :
  He is part of the C standard library defined in the <string.h> header file. It breaks the given string into tokens split by the specified delimiter.
 #### fork():
-is how you create new processes in Unix . When you call fork , you're creating a copy of your own process that has its own address space. This allows multiple tasks to run independently of one another as though they each had the full memory of the machine to themselves.
+he is how you create new processes in Unix . When you call fork , you're creating a copy of your own process that has its own address space. This allows multiple tasks to run independently of one another as though they each had the full memory of the machine to themselves.
 #### execve():
 is mainly used to smear(overlay) a process running because of the call to fork()
 #### perros():
