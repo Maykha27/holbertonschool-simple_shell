@@ -1,17 +1,5 @@
-#define _GNU_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <limits.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 
-
+#include "shell.h"
 
 
 int main()
@@ -52,9 +40,9 @@ int main()
 
 
 		wait(NULL);
-        free(args);
-    }
+		free(args);
+
+	}
 
 	free(line);
-	exit(EXIT_SUCCESS);
-}
+	

@@ -94,3 +94,4 @@ is mainly used to smear(overlay) a process running because of the call to fork()
 #### perros():
 he is the function to  print error messages to the stderr stream based on the error state in the errno.
 
+pull
