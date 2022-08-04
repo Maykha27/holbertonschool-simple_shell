@@ -1,4 +1,4 @@
-# holbertonschool-Simple shell
+# Holbertonschool-Simple shell
 The simple shell consists of designing a C program to serve as an interface to the environment that accepts commands from the user and then executes each command in a separate process. Your application will allow for input and redirection of output, as well as piping as a form of CPI between a pair of commands. The completion of this project will consist of using UNIX (fork(), exec(), wait(), ...system calls and can be completed on a Linux system.
 ### Requirements
     * Allowed editors: vi, vim, or emacs
