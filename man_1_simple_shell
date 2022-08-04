@@ -25,6 +25,7 @@ It will look inside al directions in PATH env variable for executable.
 .B simple_shell
 Command options will be typed after the main command followed by a space and a
  '-' symbol.
+ 
 
 .SH EXAMPLE
 
@@ -39,4 +40,4 @@ Single space required after argument.
 
 .SH AUTHOR
 Thiam Khady <khady.thiam@holbertonstudents.com>
- Brogniez Romain <romain.brogniez@holbertonstudents.com>
+Brogniez Romain <romain.brogniez@holbertonstudents.com>
